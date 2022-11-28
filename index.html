@@ -25,5 +25,96 @@
         <div class="slider-content" id="slider-content"></div>
       </div>
     </section>
+
+    <section class="signUp">
+      <h1>Sign up to Paw Land</h1>
+      <h2>Purrfect place for Kitties and Their Humans</h2>
+      <form action="" id="signUp" method="POST">
+        <div>
+          <input
+            type="text"
+            name="humanName"
+            id="humanName"
+            placeholder="Human Name"
+          />
+          <span class="error-text" id="error_humanName"></span>
+        </div>
+
+        <div>
+          <input
+            type="text"
+            name="catName"
+            id="catName"
+            placeholder="Cat Name"
+          />
+          <span class="error-text" id="error_catName"></span>
+        </div>
+
+        <div>
+          <input
+            type="number"
+            name="catAge"
+            id="catAge"
+            placeholder="Cat's age"
+          />
+          <span class="error-text" id="error_catAge"></span>
+        </div>
+
+        <div>
+          <input
+            class="radio"
+            type="radio"
+            name="catGender"
+            id="female"
+            placeholder="Cat Gender"
+          />
+          <label for="female">Female</label>
+          <input
+            type="radio"
+            name="catGender"
+            id="male"
+            placeholder="Cat Gender"
+          />
+          <label for="male">Male</label>
+          <input
+            class="radio"
+            type="radio"
+            name="catGender"
+            id="other"
+            placeholder="Cat Gender"
+          />
+          <label for="male">Other</label>
+          <span class="error-text" id="error_catGender"></span>
+        </div>
+
+        <div class="psw">
+          <input
+            class="radio"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password"
+          />
+          <i id="show" class="fa-solid fa-eye"></i>
+          <span class="error-text" id="error_password"></span>
+        </div>
+        <div class="confirm">
+          <input
+            type="password"
+            name="confirm password"
+            id="confirm"
+            placeholder="repeat password"
+          />
+          <i id="showPsw" class="fa-solid fa-eye"></i>
+          <span class="error-text" id="error_confirm"></span>
+        </div>
+        <div>
+          <input type="checkbox" name="agreement" id="agreement" />
+          <label for="agreement"> I agree with terms and conditions</label>
+          <span class="error-text" id="error_agreement"></span>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
   </body>
 </html>

@@ -1,8 +1,9 @@
+//slider
+
 const prevBtn = document.getElementById("arrow-left");
 const nextBtn = document.getElementById("arrow-right");
 const content = document.getElementById("slider-content");
 const wrapper = document.querySelector('.slider-wrapper');
-let dots = [];
 let current = 0;
 
 let data = [
@@ -90,7 +91,6 @@ const addSliderNav = ()=> {
 
 const dotsNav = ()=>{
     const dotsArr = Array.from(document.querySelectorAll('.fa-paw'));
-    dots = dotsArr;
     dotsArr.forEach((dot, index)=>{
         if(index === current){
             dot.style.color = 'white';
@@ -103,10 +103,6 @@ const dotsNav = ()=>{
     })
    
 }
-
-
-
-
 
 const slide = () => {
     content.innerHTML = " ";
@@ -147,10 +143,116 @@ const slide = () => {
 
   slide();
   dotsNav();
-//   dot.addEventListener('click', (e) =>{
-//     console.log(e.target);
-// })
- console.log(dots);
+
+
+
+
+
+  //form
+
+  const password = document.getElementById("password");
+  const confirm = document.getElementById("confirm");
+  const icon1 = document.getElementById("show");
+  const icon2 = document.getElementById("showPsw");
+
+ const showPassword = (icon, password)=>{
+    if (password.type == "password") {
+        password.setAttribute("type", "text");
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        password.setAttribute("type", "password");
+        icon.classList.add("fa-eye");
+        icon.classList.remove("fa-eye-slash");
+      }
+      console.log('nrah');
+  }
+  
+  icon1.addEventListener("click", (e)=>{
+    showPassword(e.target, password);
+  });
+  icon2.addEventListener("click", (e)=>{
+    showPassword(e.target, confirm);
+  });
+
+
+
+
+  const form = document.getElementById("signUp");
+
+  form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  let errors = {};
+
+  const humanName = document.getElementById("humanName").value;
+  if (humanName == "") {
+    errors.humanName =
+      "Name field must not be empty";
+  }
+
+  const catName = document.getElementById("catName").value;
+  if (catName == "") {
+    errors.catName =
+      "Name field can not be empty";
+  }
+
+  
+  const catAge = document.getElementById("catAge").value;
+  if (!catAge) {
+    errors.catAge =
+      "Please specify your cat's age";
+  }
+
+  const checkRadio = document.querySelector(
+    'input[name="catGender"]:checked');
+    if(!checkRadio){
+        errors.catGender = 
+        "Please specify your cat's gender";
+    }
+
+
+
+
+
+
+  
+
+  const passwordValue = document.getElementById("password").value;
+  const confirmValue = document.getElementById("confirm").value;
+
+  if (passwordValue == "") {
+    errors.password = "Pasword field must not be empty";
+  }
+  if (passwordValue != confirmValue) {
+    errors.confirm = "Passwords do not match";
+  }
+
+  
+  const agreement = document.getElementById("agreement").checked;
+
+  if (!agreement) {
+    errors.agreement = "You must agree to our terms and conditons";
+  }
+
+  console.log(errors);
+
+  document.querySelectorAll(".error-text").forEach((item) => {
+    item.innerText = " ";
+  });
+
+  for (let key in errors) {
+    let spanText = document.getElementById("error_" + key);
+
+    if (spanText) {
+      spanText.innerText = errors[key];
+    }
+  }
+
+  if (Object.keys(errors).length == 0) {
+     signUp.submit();
+  }
+});
+
 
 
 
