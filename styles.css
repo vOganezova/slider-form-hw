@@ -90,10 +90,9 @@ h1{
 }
 
 form{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin:20px;
+    width:70%;
+    margin: 0 auto;
+
     padding:30px;
     font-family:Arial, Helvetica, sans-serif;
 }
@@ -112,7 +111,8 @@ input{
 .fa-eye, .fa-eye-slash{
     color:blueviolet;
     cursor: pointer;
-    transform: translate(-160%, 25%);
+    position: absolute;
+    transform: translate(-30px, 10px);
 }
 
 
@@ -120,10 +120,6 @@ input{
 .fa-eye:hover{
     color:rgb(194, 169, 216);
 }
-
-/* .psw, .confirm{
-    position: relative;
-} */
 
 form button{
     font-family: inherit;
@@ -140,4 +136,25 @@ form button{
 form button:hover{
     color:white;
     background-color: blueviolet;
+}
+
+@media(max-width:320px){
+    .dot, .arrow{
+        font-size:12px;
+    }
+
+    .arrow-left{
+      left:10px;
+    }
+
+    .arrow-right{
+        right:10px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+    h1{
+        font-size:30px;
+    }
 }
